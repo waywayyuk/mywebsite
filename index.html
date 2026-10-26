@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wayyuk | Junior Developer</title>
+  <meta name="description" content="Wahyu Raditya Baril (Wayyuk), junior developer, owner of Calm SMP and co-owner of Pmoekano V2.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="top5.css">
+  <link rel="stylesheet" href="latar.css">
+  <link rel="stylesheet" href="kontak.css">
+  <link rel="stylesheet" href="bahasa.css">
+  <noscript><style>.masuk{opacity:1;transform:none}#loader{display:none}</style></noscript>
+</head>
+
+<body>
+  <!-- LOADING SCREEN: tampil sebentar saat website dibuka -->
+  <div id="loader" aria-hidden="true">
+    <canvas id="loader-kode"></canvas>
+    <div class="loader-isi">
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i><span>bash — wayyuk@portfolio:~</span></div>
+        <div id="loader-log" class="loader-log term-isi"></div>
+      </div>
+      <div class="load-baris"><span>LOADING</span><span><b id="loader-persen">0</b>%</span></div>
+      <div class="load-garis"><span id="loader-garis"></span></div>
+      <p class="load-info" id="loader-info">Junior Developer / Vibe Coder</p>
+      <button type="button" class="loader-lewati" id="loader-skip"><span data-i="skip">Skip</span> <span class="skip-panah" aria-hidden="true">›</span></button>
+    </div>
+  </div>
+
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#top">About Of Wayyuk</a>
+      <ul>
+        <li><a href="#about" data-i="nav_about">About</a></li>
+        <li><a href="#projects" data-i="nav_projects">Projects</a></li>
+        <li><a href="#top5" data-i="nav_top5">Top 5</a></li>
+        <li><a href="#contact" data-i="nav_contact">Contact</a></li>
+      </ul>
+      <div class="bahasa" role="group" aria-label="Language">
+        <button type="button" data-bahasa="en" class="aktif" aria-pressed="true">EN</button>
+        <button type="button" data-bahasa="id" aria-pressed="false">ID</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-teks">
+        <h1 class="masuk" style="--d:0s">Wahyu Raditya Baril</h1>
+        <p class="peran masuk" style="--d:.12s">Wayyuk · Junior Developer / Vibe Coder</p>
+        <p class="bio masuk" style="--d:.2s" data-i="bio">Under 18 btw. Be yourself.</p>
+        <div class="baris masuk" style="--d:.28s">
+          <a class="tombol" href="#projects" data-i="btn_proyek">See my projects</a>
+          <a class="tombol garis" href="#contact" data-i="btn_kontak">Contact me</a>
+        </div>
+      </div>
+      <!-- FOTO: nanti ganti huruf W dengan <img src="foto.jpg" alt="Wayyuk"> -->
+      <div class="foto masuk" style="--d:.36s" aria-label="Profile picture"><img src="foto.png" alt="Wayyuk"></div>
+    </div>
+  </header>
+
+  <!-- TULISAN BERJALAN -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-isi">
+      <div class="marquee-grup"><span>Junior Developer</span><span>Vibe Coder</span><span data-i="t_owner">Owner of Calm SMP</span><span data-i="t_coowner">Co-owner of Pmoekano V2</span></div>
+      <div class="marquee-grup"><span>Junior Developer</span><span>Vibe Coder</span><span data-i="t_owner">Owner of Calm SMP</span><span data-i="t_coowner">Co-owner of Pmoekano V2</span></div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2 data-i="h_about">About me</h2>
+      <p data-i="a1">Hello, I’m Wahyu Raditya Baril, but you can call me Wayyuk. Most people say Wahyu, but I like Wayyuk better because it just sounds good.</p>
+      <p data-i="a2">My age? Classified, unless you transfer 100k rupiah first (just kidding).</p>
+      <p data-i="a3">I’m a vocational high school (SMK) student majoring in TKJ (Computer and Network Engineering) from North Sumatra. People say websites are meant for software engineering (RPL) students, but I don’t really care. Everyone can have a website of their own.</p>
+      <p data-i="a4">I’m just a vibe coder with a lot of free time. Right now I’m training my skills in HTML, Python, and JavaScript (the newest one) to build websites and small plugins for Minecraft servers.</p>
+      <p data-i="a5">Outside of the programming world, I manage a Minecraft server; I am also a co-owner of Pmoekano V2 and a crew captain there.</p>
+      <div class="fakta">
+        <span>Junior Developer / Vibe Coder</span>
+        <span data-i="t_owner">Owner of Calm SMP</span>
+        <span data-i="t_coowner">Co-owner of Pmoekano V2</span>
+        <span data-i="t_smk">SMK student</span>
+      </div>
+
+      <div class="info-baris">
+        <div class="info-item">
+          <p class="info-label" data-i="il1">Role</p>
+          <p class="info-isi" data-i="iv1">Junior Developer, Minecraft server owner, and co-owner of a Blox Fruits community</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label" data-i="il2">Location</p>
+          <p class="info-isi" data-i="iv2">North Sumatra, Indonesia</p>
+        </div>
+        <div class="info-item">
+          <p class="info-label" data-i="il3">Status</p>
+          <p class="info-isi" data-i="iv3">Still in school and focused on learning</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="terang" id="projects">
+    <div class="wrap">
+      <h2 data-i="h_projects">Projects</h2>
+      <div class="grid">
+
+        <article class="kartu">
+          <h3>Calm SMP</h3>
+          <p class="status" data-i="p1s">· Owner Of Calm SMP</p>
+          <p data-i="p1d">the owner and developer of Calm SMP</p>
+          <!-- Kalau website sudah jadi: hapus aria-disabled, ganti href="#" dengan link aslinya -->
+          <a class="tombol" href="#" aria-disabled="true" data-i="p1b">Website coming soon</a>
+        </article>
+
+        <article class="kartu">
+          <h3>Pmoekano V2</h3>
+          <p class="status" data-i="p2s">· captain of the 1st division</p>
+          <p data-i="p2d">I lead Division 1 of the Pmoekano V2 crew</p>
+        </article>
+
+        <article class="kartu">
+          <h3 data-i="p3h">More soon</h3>
+          <p class="status" data-i="p3s">GitHub · coming soon</p>
+          <p data-i="p3d">My practice projects will be published on GitHub as I finish them.</p>
+          <!-- Kalau GitHub sudah ada: hapus aria-disabled, ganti href dengan link GitHub-mu -->
+          <a class="tombol" href="#" aria-disabled="true" data-i="p3b">GitHub coming soon</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP 5 ===== -->
+  <section id="top5" style="border-top:1px solid var(--garis)">
+    <div class="wrap">
+      <h2 data-i="h_top5">My Top 5</h2>
+      <div class="album">
+        <div class="album-kiri">
+        <div class="album-cover">
+          <img src="images/cover.jpg" alt="Top 5 cover" onerror="this.remove()">
+          <span>W</span>
+          <img class="cover-main" id="cover-main" alt="" hidden>
+        </div>
+          <p class="album-note"><span data-i="note_a">Want to see more of Wayyuk’s favorite songs? Click </span><a data-i="note_link" href="https://open.spotify.com/playlist/3SsFNcQKTspwj8CA2EqVhd?si=64c9062e28964dc8" target="_blank" rel="noopener">See playlist Wayyuk</a>.</p>
+        </div>
+        <div class="album-isi">
+          <h3 data-i="t5h">Songs on repeat</h3>
+          <p class="album-meta">Playlist · 2026 · Wayyuk</p>
+          <p class="album-desk" data-i="t5d">The five songs I keep coming back to. Press Play to listen here, or open a song in Spotify.</p>
+          <ol class="album-daftar">
+          <li class="lagu" data-id="3oEkrIfXfSh9zGnE7eBzSV" data-img="images/top1.png">
+            <span class="no">01</span>
+            <img class="thumb" src="images/top1.png" alt="" width="56" height="56" onerror="this.style.visibility='hidden'">
+            <span class="nama">The Winner Takes It All<small>ABBA</small></span>
+            <div class="aksi">
+              <button class="tombol" type="button" data-main>Play</button>
+              <a class="tombol garis" href="https://open.spotify.com/track/3oEkrIfXfSh9zGnE7eBzSV?si=509b48b1752846c1" target="_blank" rel="noopener" data-i="listen">Listen in Spotify</a>
+            </div>
+            <div class="embed"></div>
+          </li>
+          <li class="lagu" data-id="0XYALktGbnHJ1TdW0Oz5KN" data-img="images/top2.png">
+            <span class="no">02</span>
+            <img class="thumb" src="images/top2.png" alt="" width="56" height="56" onerror="this.style.visibility='hidden'">
+            <span class="nama">Merry Christmas I Miss You<small></small></span>  <!-- isi nama artis di antara <small> -->
+            <div class="aksi">
+              <button class="tombol" type="button" data-main>Play</button>
+              <a class="tombol garis" href="https://open.spotify.com/track/0XYALktGbnHJ1TdW0Oz5KN?si=8b5600b28811493f" target="_blank" rel="noopener" data-i="listen">Listen in Spotify</a>
+            </div>
+            <div class="embed"></div>
+          </li>
+          <li class="lagu" data-id="2sD709AK9zRN6SKUmDhGEa" data-img="images/top3.png">
+            <span class="no">03</span>
+            <img class="thumb" src="images/top3.png" alt="" width="56" height="56" onerror="this.style.visibility='hidden'">
+            <span class="nama">Dia Masa Lalumu Aku Masa Depanmu<small>Vionita</small></span>
+            <div class="aksi">
+              <button class="tombol" type="button" data-main>Play</button>
+              <a class="tombol garis" href="https://open.spotify.com/track/2sD709AK9zRN6SKUmDhGEa?si=931ff2f3194c401e" target="_blank" rel="noopener" data-i="listen">Listen in Spotify</a>
+            </div>
+            <div class="embed"></div>
+          </li>
+          <li class="lagu" data-id="0UOG0zUn7t8m8QcxfzR7AH" data-img="images/top4.png">
+            <span class="no">04</span>
+            <img class="thumb" src="images/top4.png" alt="" width="56" height="56" onerror="this.style.visibility='hidden'">
+            <span class="nama">Merry Christmas, Please Don’t Call<small></small></span>  <!-- isi nama artis di antara <small> -->
+            <div class="aksi">
+              <button class="tombol" type="button" data-main>Play</button>
+              <a class="tombol garis" href="https://open.spotify.com/track/0UOG0zUn7t8m8QcxfzR7AH?si=5b21bcc794234dd4" target="_blank" rel="noopener" data-i="listen">Listen in Spotify</a>
+            </div>
+            <div class="embed"></div>
+          </li>
+          <li class="lagu" data-id="0Y7dCFSIdB9vJ8nnVIAfuv" data-img="images/top5.png">
+            <span class="no">05</span>
+            <img class="thumb" src="images/top5.png" alt="" width="56" height="56" onerror="this.style.visibility='hidden'">
+            <span class="nama">I’d Like to Watch You Sleeping<small></small></span>  <!-- isi nama artis di antara <small> -->
+            <div class="aksi">
+              <button class="tombol" type="button" data-main>Play</button>
+              <a class="tombol garis" href="https://open.spotify.com/track/0Y7dCFSIdB9vJ8nnVIAfuv?si=ed6a834ca55b4be1" target="_blank" rel="noopener" data-i="listen">Listen in Spotify</a>
+            </div>
+            <div class="embed"></div>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" style="border-top:1px solid var(--garis)">
+    <div class="wrap">
+      <h2 data-i="h_contact">Contact</h2>
+      <p class="kontak-intro" data-i="k_intro">Want to talk, collaborate, or just say hi? Pick whichever you like.</p>
+
+      <div class="kontak-grid">
+
+        <div class="kontak-kartu lebar">
+          <div class="kontak-ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+          <div class="kontak-teks">
+            <strong>Email</strong>
+            <span><a href="mailto:wahyubaril071111@gmail.com">wahyubaril071111@gmail.com</a></span>
+          </div>
+          <button class="tombol garis" data-salin="wahyubaril071111@gmail.com" data-i="copy">Copy</button>
+        </div>
+
+        <a class="kontak-kartu" href="https://www.tiktok.com/@waywayyuk" target="_blank" rel="noopener" aria-label="TikTok @waywayyuk">
+          <div class="kontak-ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></div>
+          <div class="kontak-teks"><strong>TikTok</strong><span>@waywayyuk</span></div>
+          <span class="panah" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="kontak-kartu" href="https://www.instagram.com/wayuulohhyakk/" target="_blank" rel="noopener" aria-label="Instagram @wayuulohhyakk">
+          <div class="kontak-ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          <div class="kontak-teks"><strong>Instagram</strong><span>@wayuulohhyakk</span></div>
+          <span class="panah" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="kontak-kartu" href="https://discord.com/users/1380426976044650550" target="_blank" rel="noopener" aria-label="Discord wayyuk4ptn">
+          <div class="kontak-ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></div>
+          <div class="kontak-teks"><strong>Discord</strong><span>wayyuk4ptn</span></div>
+          <span class="panah" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="kontak-kartu" href="https://t.me/wayu4kptn" target="_blank" rel="noopener" aria-label="Telegram @wayu4kptn">
+          <div class="kontak-ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
+          <div class="kontak-teks"><strong>Telegram</strong><span>@wayu4kptn</span></div>
+          <span class="panah" aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Wahyu Raditya Baril</footer>
+
+  <div id="toast" role="status"></div>
+
+  <!-- Library Lenis (scroll meluncur) dimatikan sementara. Untuk mengaktifkan lagi: hapus tanda komentar ini
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  -->
+  <script src="script.js"></script>
+  <script src="top5.js"></script>
+  <script src="latar.js"></script>
+  <script src="bahasa.js"></script>
+</body>
+</html>

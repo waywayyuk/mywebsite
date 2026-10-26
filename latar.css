@@ -1,0 +1,206 @@
+/* ===== LATAR BELAKANG HIDUP ===== */
+/* Lapisan ini dibuat oleh latar.js dan berada di belakang semua isi halaman */
+.latar { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+
+/* Garis kotak-kotak tipis di seluruh halaman */
+.latar .kisi {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 56px 56px;
+}
+/* Cahaya lembut yang mengikuti kursor (digerakkan lewat transform supaya ringan) */
+.latar .sorot {
+  position: absolute; left: 0; top: 0; width: 600px; height: 600px;
+  margin: -300px 0 0 -300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.09), transparent 65%);
+  transform: translate3d(70vw, 25vh, 0);
+  will-change: transform;
+}
+
+/* Cahaya putih lembut yang melayang pelan */
+.latar .cahaya {
+  position: absolute; width: 50vmax; height: 50vmax; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.10), transparent 65%);
+  animation: melayang 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.latar .cahaya.a { top: -22vmax; left: -16vmax; }
+.latar .cahaya.b { right: -22vmax; top: 35vh; animation-duration: 34s; animation-delay: -9s; }
+@keyframes melayang { to { transform: translate3d(8vmax, 6vmax, 0) scale(1.15); } }
+
+/* Simbol kode yang mengapung */
+.latar .simbol {
+  position: absolute; font-weight: 800; color: rgba(255,255,255,.09);
+  font-family: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
+  animation: apung 18s ease-in-out infinite;
+}
+@keyframes apung { 50% { transform: translateY(-28px) rotate(6deg); } }
+
+/* Kotak hero yang lama diganti kotak global di atas */
+.hero::before { display: none; }
+
+/* Bagian Projects ikut gelap */
+.terang { background: transparent; color: var(--putih); border-top: 1px solid var(--garis); }
+.terang .kartu { border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.03); }
+.terang .tombol { background: var(--putih); color: var(--hitam); border-color: var(--putih); }
+.terang .tombol:hover { background: transparent; color: var(--putih); }
+
+/* Saat kartu disorot kursor: berubah jadi putih */
+.terang .kartu:hover { background: var(--putih); color: var(--hitam); border-color: var(--putih); }
+.terang .kartu:hover .tombol { background: var(--hitam); color: var(--putih); border-color: var(--hitam); }
+
+@media (prefers-reduced-motion: reduce) {
+  .latar .cahaya, .latar .simbol { animation: none; }
+}
+
+/* Tag di About (Junior Developer, Owner of Calm SMP, dll.): berubah warna saat disorot kursor */
+.fakta span {
+  transition: background .25s, color .25s, border-color .25s, transform .25s;
+  cursor: default;
+}
+.fakta span:hover {
+  background: var(--putih);
+  color: var(--hitam);
+  border-color: var(--putih);
+  transform: translateY(-3px);
+}
+
+/* Tombol (See my projects, Contact me, Copy, dll.): ikut bergerak saat disorot */
+.tombol {
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.tombol:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(255, 255, 255, .2);
+}
+.tombol:active {
+  transform: translateY(-1px) scale(.97); /* terasa "ditekan" saat diklik */
+  box-shadow: none;
+}
+
+/* Menu atas (About, Projects, Top 5, Contact): garis putih muncul saat disorot */
+nav ul a {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  transition: color .25s;
+}
+nav ul a::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: var(--putih);
+  transform: scaleX(0);
+  transform-origin: right;            /* saat kursor pergi, garis menghilang ke kanan */
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1);
+}
+nav ul a:hover::after,
+nav ul a.aktif::after {
+  transform: scaleX(1);
+  transform-origin: left;             /* saat kursor datang, garis tumbuh dari kiri */
+}
+nav ul a.aktif { border-bottom: 0; }  /* garis menu aktif sekarang memakai efek yang sama */
+
+/* Menu atas tanpa efek blur supaya scroll tetap ringan */
+nav { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(10, 10, 10, .94); }
+
+/* Animasi latar dijeda sementara saat halaman sedang di-scroll, supaya scroll terasa ringan */
+html.gulir .latar .cahaya,
+html.gulir .latar .simbol { animation-play-state: paused; }
+
+/* ===== LOADING SCREEN: tombol Skip dan transisi menghilang (fade) ===== */
+#loader {
+  cursor: default;
+  transition: opacity .9s cubic-bezier(.4, 0, .2, 1), transform .9s cubic-bezier(.4, 0, .2, 1), visibility 0s linear .9s;
+}
+#loader.selesai { opacity: 0; transform: scale(1.04); visibility: hidden; pointer-events: none; }
+#loader .loader-isi { transition: transform .9s cubic-bezier(.4, 0, .2, 1); }
+#loader.selesai .loader-isi { transform: scale(.96); }
+
+.loader-lewati {
+  left: 50%; right: auto; bottom: 32px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 20px; border-radius: 999px; cursor: pointer;
+  font-size: .9rem; font-weight: 700; color: var(--putih);
+  background: rgba(0, 0, 0, .55); border: 1px solid rgba(255, 255, 255, .35);
+  animation: skip-muncul .7s ease 1.2s both;  /* muncul setelah 1,2 detik */
+  transition: background .2s, color .2s, border-color .2s;
+}
+.loader-lewati:hover { background: var(--putih); color: var(--hitam); border-color: var(--putih); }
+.loader-lewati:focus-visible { outline: 3px solid var(--abu); outline-offset: 3px; }
+.skip-panah { transition: transform .2s; }
+.loader-lewati:hover .skip-panah { transform: translateX(4px); }
+@keyframes skip-muncul {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Isi website muncul perlahan saat loading memudar */
+@media (prefers-reduced-motion: no-preference) {
+  .masuk {
+    transition: opacity .9s ease calc(var(--d, 0s) + .3s), transform .9s cubic-bezier(.2, .7, .2, 1) calc(var(--d, 0s) + .3s);
+  }
+}
+
+/* Kotak terminal: tinggi tetap supaya tidak bergeser saat baris bertambah */
+.loader-log { min-height: 7.4em; }
+
+/* ===== LOADING SCREEN: jendela terminal ===== */
+#loader .loader-isi {
+  width: min(520px, 88vw); padding: 0;
+  background: none; border: 0; border-radius: 0;
+  display: flex; flex-direction: column;
+}
+.term {
+  border: 1px solid rgba(255, 255, 255, .14); border-radius: 14px; overflow: hidden;
+  background: rgba(8, 8, 8, .72);
+}
+.term-bar {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  font-size: .78rem; color: var(--abu);
+}
+.term-bar i { width: 11px; height: 11px; border-radius: 50%; background: rgba(255, 255, 255, .2); }
+.term-bar span { margin-left: 8px; }
+#loader .term-isi { min-height: 9.2em; margin: 0; padding: 20px 22px; font-size: .95rem; }
+
+.load-baris {
+  display: flex; justify-content: space-between; margin: 24px 2px 10px;
+  font-size: .72rem; letter-spacing: .16em; color: var(--abu);
+}
+.load-baris b { font-weight: 400; font-variant-numeric: tabular-nums; }
+.load-garis { height: 1px; background: rgba(255, 255, 255, .18); }
+.load-garis span { display: block; height: 100%; width: 0; background: var(--putih); }
+
+.load-info {
+  align-self: center; margin-top: 28px; padding: 7px 16px; border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+  font-size: .75rem; color: #c8c8c8; text-align: center;
+  transition: opacity .25s;
+}
+.load-info.ganti { opacity: 0; }
+
+.loader-lewati {
+  position: relative; left: auto; right: auto; bottom: auto; transform: none;
+  align-self: center; margin-top: 22px;
+  animation: skip-muncul2 .7s ease 1.2s both;
+}
+@keyframes skip-muncul2 { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ===== ABOUT: baris info (Peran / Domisili / Status) ===== */
+.info-baris {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  margin-top: 40px; padding-top: 26px;
+  border-top: 1px solid var(--garis);
+}
+.about .info-label {
+  margin: 0 0 8px; max-width: none; color: var(--abu);
+  font-family: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
+  font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
+}
+.about .info-isi { margin: 0; max-width: none; color: var(--putih); font-size: 1.1rem; font-weight: 700; line-height: 1.55; }
+
+@media (max-width: 700px) {
+  .info-baris { grid-template-columns: 1fr; gap: 20px; }
+}
