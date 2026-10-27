@@ -31,7 +31,7 @@
     "edu_title": "Pendidikan",
     "edu_current": "PENDIDIKAN SAAT INI",
     "edu_location": "Percut Sei Tuan, Sumatra Utara, Indonesia",
-    "edu_description": "Saya saat ini sudah bersekolah di Yayasan Pendidikan SMK Mandiri, sekolah yang banyak dicari di Medan hingga Sumatra. SMK Mandiri merupakan pusat pendidikan vokasi unggulan yang mencetak tenaga profesional di bidang Komputer dan Otomotif, serta berfokus pada integritas dan keterampilan praktis melalui pembelajaran berbasis industri dan kesempatan membangun kompetensi profesional.",
+    "edu_description": "I currently attend SMK Mandiri Educational Foundation, a school sought after by students in Medan and across Sumatra. SMK Mandiri is a leading vocational education center that prepares professionals in Computer and Automotive fields. The school focuses on integrity and practical skills through industry-based learning and opportunities to develop professional competencies.",
     "edu_feature1": "Kurikulum Berbasis Industri",
     "edu_feature2": "Fasilitas Praktik Lengkap",
     "edu_feature3": "Sertifikasi Kompetensi",
