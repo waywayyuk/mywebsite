@@ -94,10 +94,22 @@
     window.dispatchEvent(new Event("bahasa"));
   }
 
+  let timerBahasa;
+
   tombol.forEach(function (t) {
     t.addEventListener("click", function () {
-      terapkan(t.dataset.bahasa);
-      try { localStorage.setItem("bahasa", t.dataset.bahasa); } catch (e) {}
+      const bahasaBaru = t.dataset.bahasa;
+      if (bahasaBaru === bahasa) return;
+
+      clearTimeout(timerBahasa);
+      document.body.classList.add("bahasa-beralih");
+      timerBahasa = setTimeout(function () {
+        terapkan(bahasaBaru);
+        try { localStorage.setItem("bahasa", bahasaBaru); } catch (e) {}
+        requestAnimationFrame(function () {
+          document.body.classList.remove("bahasa-beralih");
+        });
+      }, 160);
     });
   });
 
