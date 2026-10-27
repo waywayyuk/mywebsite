@@ -289,10 +289,11 @@ body.bahasa-beralih [data-i] {
 
 
 /* ===== EDUCATION ===== */
+.education-section { border-top: 1px solid var(--garis); }
 .education {
-  margin-top: 58px;
-  padding-top: 34px;
-  border-top: 1px solid var(--garis);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 .education-heading { margin-bottom: 22px; }
 .education-eyebrow {
