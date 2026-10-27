@@ -196,3 +196,30 @@ body.siap .masuk { opacity: 1; transform: none; }
   .masuk { opacity: 1; transform: none; transition: none; }
   #loader { display: none; }
 }
+
+
+/* ===== EXPERIENCE CARDS ===== */
+.pengalaman-grid { align-items: stretch; }
+.kartu-pengalaman {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+}
+.pengalaman-gambar {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .06);
+  padding: 5px;
+}
+.pengalaman-isi { min-width: 0; }
+.kartu-pengalaman h3 { overflow-wrap: anywhere; }
+.kartu-pengalaman p:last-child { margin-bottom: 0; }
+.kartu-pengalaman:hover .pengalaman-gambar { background: rgba(255, 255, 255, .08); }
+@media (max-width: 560px) {
+  .kartu-pengalaman { gap: 12px; padding: 18px; }
+  .pengalaman-gambar { width: 64px; height: 64px; flex-basis: 64px; }
+}
