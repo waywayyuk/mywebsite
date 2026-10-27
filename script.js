@@ -231,3 +231,28 @@ const pengamatMenu = new IntersectionObserver(function (daftar) {
   });
 }, { rootMargin: "-40% 0px -55% 0px" });
 document.querySelectorAll("section[id]").forEach(function (b) { pengamatMenu.observe(b); });
+
+
+// ===== 4. TOMBOL KEMBALI KE ATAS =====
+const tombolKeAtas = document.getElementById("ke-atas");
+let jadwalCekScroll = false;
+
+function perbaruiTombolKeAtas() {
+  tombolKeAtas.classList.toggle("tampil", window.scrollY > 300);
+  jadwalCekScroll = false;
+}
+
+window.addEventListener("scroll", function () {
+  if (jadwalCekScroll) return;
+  jadwalCekScroll = true;
+  window.requestAnimationFrame(perbaruiTombolKeAtas);
+}, { passive: true });
+
+tombolKeAtas.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: kurangiGerak ? "auto" : "smooth"
+  });
+});
+
+perbaruiTombolKeAtas();
