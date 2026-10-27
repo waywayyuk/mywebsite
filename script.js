@@ -158,7 +158,7 @@ console.log("Cek efek -> Lenis termuat:", !!window.Lenis, "| kurangi animasi akt
 
 // Lenis memberi efek scroll yang lebih licin dan sedikit berat.
 // Jika browser memilih reduced motion, efek ini tetap dimatikan.
-const pakaiLenis = true;
+const pakaiLenis = false;
 
 if (pakaiLenis && window.Lenis && !kurangiGerak) {
   lenis = new Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 0.9 });
