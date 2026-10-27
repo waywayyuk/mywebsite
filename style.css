@@ -223,3 +223,17 @@ body.siap .masuk { opacity: 1; transform: none; }
   .kartu-pengalaman { gap: 12px; padding: 18px; }
   .pengalaman-gambar { width: 64px; height: 64px; flex-basis: 64px; }
 }
+
+
+/* ===== TRANSISI HALUS SAAT GANTI BAHASA ===== */
+[data-i] {
+  transition: opacity .22s ease, transform .22s ease;
+}
+body.bahasa-beralih [data-i] {
+  opacity: 0;
+  transform: translateY(4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-i] { transition: none; }
+  body.bahasa-beralih [data-i] { opacity: 1; transform: none; }
+}
