@@ -48,7 +48,7 @@
     "p3s": "Pelanggan layanan hosting",
     "p3d": "Saya berlangganan Arqonara karena shared hosting-nya punya spesifikasi yang sangat bagus dan sumber daya yang cukup untuk menjalankan server yang ramai.",
     "p3b": "GitHub segera hadir",
-    "h_top5": "Top 5 Milikku",
+    "h_top5": "Top 5 Lagu",
     "t5h": "Lagu yang diulang-ulang",
     "t5d": "Lima lagu yang selalu kuputar ulang. Tekan Play untuk mendengarkan di sini, atau buka lagunya di Spotify.",
     "note_a": "Mau lihat lagu favorit Wayyuk lainnya? Klik ",
