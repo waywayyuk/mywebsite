@@ -156,13 +156,12 @@ const kurangiGerak = window.matchMedia("(prefers-reduced-motion: reduce)").match
 let lenis = null;
 console.log("Cek efek -> Lenis termuat:", !!window.Lenis, "| kurangi animasi aktif:", kurangiGerak);
 
-// Lenis (scroll meluncur) dimatikan karena menyebabkan error "tidak bisa scroll" di sebagian komputer.
-// Scroll biasa dari browser sudah halus. Untuk mencoba lagi: ubah false jadi true dan aktifkan
-// baris <script src=".../lenis.min.js"> di index.html.
-const pakaiLenis = false;
+// Lenis memberi efek scroll yang lebih licin dan sedikit berat.
+// Jika browser memilih reduced motion, efek ini tetap dimatikan.
+const pakaiLenis = true;
 
 if (pakaiLenis && window.Lenis && !kurangiGerak) {
-  lenis = new Lenis({ lerp: 0.18 });
+  lenis = new Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 0.9 });
   // Pengaman: kalau Lenis error, matikan supaya scroll biasa kembali normal
   window.addEventListener("error", function (e) {
     if (lenis && e.filename && e.filename.indexOf("lenis") !== -1) { lenis.destroy(); lenis = null; }
