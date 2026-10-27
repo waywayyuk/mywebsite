@@ -237,3 +237,52 @@ body.bahasa-beralih [data-i] {
   [data-i] { transition: none; }
   body.bahasa-beralih [data-i] { opacity: 1; transform: none; }
 }
+
+
+/* ===== TOMBOL KEMBALI KE ATAS ===== */
+#ke-atas {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  background: rgba(245, 245, 245, .94);
+  color: #0a0a0a;
+  font: inherit;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease, background .2s, color .2s;
+}
+#ke-atas.tampil {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#ke-atas:hover {
+  background: #0a0a0a;
+  color: #f5f5f5;
+  border-color: rgba(255, 255, 255, .5);
+}
+#ke-atas:focus-visible {
+  outline: 3px solid var(--abu);
+  outline-offset: 4px;
+}
+@media (max-width: 560px) {
+  #ke-atas { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ke-atas { transition: none; }
+}
