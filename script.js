@@ -158,19 +158,41 @@ console.log("Cek efek -> Lenis termuat:", !!window.Lenis, "| kurangi animasi akt
 
 // Lenis memberi efek scroll yang lebih licin dan sedikit berat.
 // Jika browser memilih reduced motion, efek ini tetap dimatikan.
-const pakaiLenis = false;
+const pakaiLenis = true;
 
 if (pakaiLenis && window.Lenis && !kurangiGerak) {
-  lenis = new Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 0.9 });
-  // Pengaman: kalau Lenis error, matikan supaya scroll biasa kembali normal
-  window.addEventListener("error", function (e) {
-    if (lenis && e.filename && e.filename.indexOf("lenis") !== -1) { lenis.destroy(); lenis = null; }
-  }); // makin kecil = makin meluncur tapi terasa berat; makin besar = makin ringan dan cepat
-  function putar(waktu) {
-    lenis.raf(waktu);
+  try {
+    // Lerping lebih lembut, tanpa membuat scroll terasa terlalu lambat.
+    lenis = new Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.85 });
+
+    // Pengaman: bila Lenis gagal, hentikan animasinya agar scroll browser tetap normal.
+    function matikanLenis() {
+      if (!lenis) return;
+      try { lenis.destroy(); } catch (_) {}
+      lenis = null;
+    }
+
+    window.addEventListener("error", function (e) {
+      if (lenis && e.filename && e.filename.toLowerCase().includes("lenis")) {
+        matikanLenis();
+      }
+    });
+
+    function putar(waktu) {
+      if (!lenis) return; // hentikan RAF jika Lenis dimatikan setelah error
+      try {
+        lenis.raf(waktu);
+        requestAnimationFrame(putar);
+      } catch (e) {
+        matikanLenis();
+        console.warn("Lenis dimatikan; scroll browser kembali normal.", e);
+      }
+    }
     requestAnimationFrame(putar);
+  } catch (e) {
+    lenis = null;
+    console.warn("Lenis gagal dimulai; memakai scroll bawaan browser.", e);
   }
-  requestAnimationFrame(putar);
 }
 
 // Klik menu: meluncur ke bagian tujuan
