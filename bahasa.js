@@ -10,6 +10,7 @@
     "il3": "Status",
     "iv3": "Masih bersekolah dan fokus belajar",
     "nav_about": "Tentang",
+    "nav_education": "Pendidikan",
     "nav_projects": "Pengalaman",
     "nav_top5": "Top 5",
     "nav_contact": "Kontak",
