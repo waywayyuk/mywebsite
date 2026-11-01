@@ -16,6 +16,7 @@
     "nav_contact": "Kontak",
     "skip": "Lewati",
     "bio": "Di bawah 18 btw. Jadilah dirimu sendiri.",
+    "what_inside": "Ada apa di dalam 👀",
     "btn_proyek": "Lihat pengalamanku",
     "btn_kontak": "Hubungi aku",
     "h_about": "Tentang saya",
