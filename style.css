@@ -398,7 +398,8 @@ body.bahasa-beralih [data-i] {
   border: 2px solid #111; border-radius: 18px;
   font-size: .95rem; font-weight: 700; line-height: 1.35; text-align: center;
   box-shadow: 3px 4px 0 #111;
-  animation: balon-muncul .22s ease-out both;
+  opacity: 0; transform: translate(-50%, 8px) scale(.92);
+  transition: opacity .18s ease, transform .18s ease;
 }
 .balon-komik::before {
   content: ""; position: absolute; top: -11px; left: 50%;
@@ -406,7 +407,7 @@ body.bahasa-beralih [data-i] {
   border-top: 2px solid #111; border-left: 2px solid #111;
   transform: translateX(-50%) rotate(45deg);
 }
+ .balon-komik.balon-aktif { opacity: 1; transform: translate(-50%, 0) scale(1); }
 .balon-komik[hidden] { display: none; }
-@keyframes balon-muncul { from { opacity: 0; transform: translate(-50%, 8px) scale(.92); } to { opacity: 1; transform: translate(-50%, 0) scale(1); } }
 @media (max-width: 600px) { .foto-kolom { flex-basis: 100%; } }
 @media (prefers-reduced-motion: reduce) { .what-inside { transition: none; } .balon-komik { animation: none; } }
