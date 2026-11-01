@@ -16,7 +16,7 @@
     "nav_contact": "Kontak",
     "skip": "Lewati",
     "bio": "Di bawah 18 btw. Jadilah dirimu sendiri.",
-    "btn_proyek": "Lihat proyekku",
+    "btn_proyek": "Lihat pengalamanku",
     "btn_kontak": "Hubungi aku",
     "h_about": "Tentang saya",
     "a1": "Halo, aku Wahyu Raditya Baril, tapi kamu bisa memanggilku Wayyuk. Kebanyakan orang memanggil Wahyu, tapi aku lebih suka Wayyuk karena terdengar bagus saja.",
