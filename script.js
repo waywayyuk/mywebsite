@@ -258,9 +258,29 @@ perbaruiTombolKeAtas();
 const tombolWhat = document.getElementById("what-inside");
 const balonKomik = document.getElementById("balon-komik");
 if (tombolWhat && balonKomik) {
+  let timerBalon;
+  function tutupBalon() {
+    balonKomik.classList.remove("balon-aktif");
+    tombolWhat.setAttribute("aria-expanded", "false");
+    window.setTimeout(function () {
+      balonKomik.hidden = true;
+    }, kurangiGerak ? 0 : 180);
+  }
+
   tombolWhat.addEventListener("click", function () {
-    const akanTampil = balonKomik.hidden;
-    balonKomik.hidden = !akanTampil;
-    tombolWhat.setAttribute("aria-expanded", String(akanTampil));
+    if (!balonKomik.hidden) {
+      window.clearTimeout(timerBalon);
+      tutupBalon();
+      return;
+    }
+
+    window.clearTimeout(timerBalon);
+    balonKomik.hidden = false;
+    // Restart animasi setiap kali balon dibuka
+    balonKomik.classList.remove("balon-aktif");
+    void balonKomik.offsetWidth;
+    balonKomik.classList.add("balon-aktif");
+    tombolWhat.setAttribute("aria-expanded", "true");
+    timerBalon = window.setTimeout(tutupBalon, 3000);
   });
 }
