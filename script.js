@@ -252,3 +252,15 @@ tombolKeAtas.addEventListener("click", function () {
 });
 
 perbaruiTombolKeAtas();
+
+ 
+// ===== WHAT INSIDE: BALON UCAPAN KOMIK =====
+const tombolWhat = document.getElementById("what-inside");
+const balonKomik = document.getElementById("balon-komik");
+if (tombolWhat && balonKomik) {
+  tombolWhat.addEventListener("click", function () {
+    const akanTampil = balonKomik.hidden;
+    balonKomik.hidden = !akanTampil;
+    tombolWhat.setAttribute("aria-expanded", String(akanTampil));
+  });
+}
